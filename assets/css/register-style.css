@@ -1,0 +1,63 @@
+body {
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    background-image: url("/img/dlsud-bg-login.png"); /* Replace with the provided background image link */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* .gradient-custom {
+    background: #f093fb;
+    background: -webkit-linear-gradient(top left, #56C596, #4CAF50, #00796B);
+    background: linear-gradient(to bottom right, #56C596, #4CAF50, #00796B);
+} */
+
+.card-registration {
+    border-radius: 15px;
+}
+
+.card-registration .form-label {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.card-registration .form-control-lg {
+    background-color: #F3E5F5;
+    border-radius: 50px !important;
+    padding: 12px 15px 12px 15px !important;
+    border: none !important;
+    font-size: 16px !important;
+    color: #000 !important;
+    font-weight: 400;
+}
+
+.card-registration .form-control-lg:focus {
+    box-shadow: none !important;
+    border: 1px solid #D500F9 !important;
+    outline-width: 0;
+}
+
+.card-registration .btn-primary {
+    border-radius: 50px;
+    color: #fff;
+    background-image: linear-gradient(to right, #56C596, #4CAF50, #00796B);
+    padding: 15px 30px;
+    cursor: pointer;
+    border: none !important;
+}
+
+.card-registration .btn-primary:hover {
+    background-image: linear-gradient(to right, #00796B, #4CAF50, #56C596);
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+}
+
+.card-registration .select-arrow {
+    top: 13px;
+}

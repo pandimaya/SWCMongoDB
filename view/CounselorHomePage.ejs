@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>DLSU-D SWC</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/img/dlsud-logo.png" rel="icon">
+  <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/vendor/animate.css/animate.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/vendor/boxicons/css/boxicons.css" rel="stylesheet">
+  <link href="/vendor/glightbox/css/glightbox.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/css/student-homepage-style.css" rel="stylesheet">
+</head>
+
+<body>
+
+   <!-- ======= Top Bar ======= -->
+   <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-person"></i>Welcome Counselor <%= counselorData.last_name %> <%= counselorData.first_name %>
+      </div>
+      <div class="social-links d-none d-md-block">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <div class="shadow p-3 mb-5 bg-body rounded">
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="/CounselorHomePage">DLSU-D Student Wellness Center</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li class="dropdown"><a href="#"><span>Profile</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/CounselorProfilePage">Account Details</a></li>
+              <li><a href="#">Edit Counselor Role</a></li>
+              <li><a href="#">Settings</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">
+              <span>Appointments</span>
+              <% if (hasNewAppointments) { %>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  <span class="visually-hidden"></span>!
+                </span>
+              <% } %>
+              <i class="bi bi-chevron-down"></i>
+            </a>
+            <ul>
+              <li>
+                <a href="/CounselorPendingAppointmentPage">
+                  Pending Appointments
+                  <span class="badge rounded-pill badge-notification bg-danger">
+                    <%= pendingAppointmentsCount > 0 ? pendingAppointmentsCount : '' %>
+                    
+                  </span>
+                </a>
+              </li>
+              <li><a href="/CounselorAppointmentHistoryPage">Appointment History</a></li>
+              <li><a href="/CounselorAcceptedAppointmentPage">Accepted Appointments</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Documentation</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/CounselorLogs">Logs</a></li>
+              <li><a href="/CounselorReport">Report</a></li>
+            </ul>
+          </li>
+          <li><a class="getstarted scrollto" href="/">Logout</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+      <div class="carousel-inner" role="listbox">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url(/img/slide/slide-1.jpg)">
+          <div class="carousel-container">
+            <div class="container">
+              <h2 class="animate__animated animate__fadeInDown">Welcome  <span>Counselor!</span></h2>
+              <p class="animate__animated animate__fadeInUp">Our website is not just a platform; it is a community—a sanctuary where people come together to heal, grow, and thrive. We are confident that your contributions will enrich this community and bring forth positive change.</p>
+              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item" style="background-image: url(/img/slide/slide-2.jpg)">
+          <div class="carousel-container">
+            <div class="container">
+              <h2 class="animate__animated animate__fadeInDown">Encourage growth!</h2>
+              <p class="animate__animated animate__fadeInUp">As you engage with students from all walks of life, remember that your unique perspective and insights can be transformative. We encourage you to explore innovative approaches and embrace your individuality to best serve those who turn to you for support.</p>
+              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item" style="background-image: url(/img/slide/slide-3.jpg)">
+          <div class="carousel-container">
+            <div class="container">
+              <h2 class="animate__animated animate__fadeInDown">Creating a safe space</h2>
+              <p class="animate__animated animate__fadeInUp">We believe that the relationship between a counselor and their students is built on trust, empathy, and active listening. Your commitment to creating a safe and inclusive space for each person who seeks your guidance aligns perfectly with our core values.</p>
+              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+   
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>About SWC</h2>
+          <p>To ensure the students' mental health and well being during their stay in De La Salle University-Dasmariñas, the Student Wellness Center (SWC) takes a more proactive stance in helping students go through the different constellations of their development.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="https://www.dlsud.edu.ph/campuslife/studentlife/assets/img/_banner-studentLife.png" class="img-fluid" id= "abtImage" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3>Vision</h3>
+      
+            <ul>
+              <li><i class="bi bi-check-circled"></i> Lasallian students who have fuller appreciation of their potentials, strengths, resources and sense of agency.</li>
+              <h3>Mission</h3>
+              <li><i class="bi bi-check-circled"></i> We, professional counselors and psychologists who believe in holistic human development, hereby commit to taking part in forming competent, socially conscious, responsible and compassionate citizens for God and country. By forging partnerships with different stakeholders, we hope to facilitate growth and development in our students. Through programs and services aimed at enhancing wellness, we aspire to develop empowered students who are able to turn life’s challenges, stresses and opportunities to their maximum advantage and satisfaction.</li>
+            </ul>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Address:</h4>
+                <p>De La Salle University - Dasmariñas DBB-B City of Dasmariñas Cavite. Philippines 4115</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>swc@dlsud.edu.ph</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>Hotline: 0912-3349003</p>
+                <p>Local Line: +63 (46) 481.1900 local 3054</p>
+                <p>Manila Line: +63 (2) 779.5180</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" required>
+                </div>
+                <div class="form-group col-md-6 mt-3 mt-md-0">
+                  <label for="name">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <label for="name">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <label for="name">Message</label>
+                <textarea class="form-control" name="message" rows="10" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Student Wellness Center</h3>
+      <p>Create possibilities with DLSU-D.</p>
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong><span>De La Salle</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/js/home-page.js"></script>
+
+</body>
+
+</html>

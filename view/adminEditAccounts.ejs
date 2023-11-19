@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>DLSU-D SWC</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/img/dlsud-logo.png" rel="icon">
+  <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/vendor/animate.css/animate.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/vendor/boxicons/css/boxicons.css" rel="stylesheet">
+  <link href="/vendor/glightbox/css/glightbox.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/css/student-homepage-style.css" rel="stylesheet">
+</head>
+
+<body>
+
+   <!-- ======= Top Bar ======= -->
+   <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-phone-fill phone-icon"></i> Cavite: +63 (46) 481.1900
+        <i class="bi bi-phone-fill phone-icon"></i> Manila: +63 (2) 8779.5180
+      </div>
+      <div class="social-links d-none d-md-block">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="/adminHomepage">DLSU-D Student Wellness Center</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li class="dropdown"><a href="#"><span>Manage Accounts</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/adminViewAccounts">View Accounts</a></li>
+              <li><a href="/adminCreateAccounts">Create Accounts</a></li>
+              <li><a href="/adminEditRoles">Edit Roles</a></li>
+              <li><a href="/adminEditAccounts">Edit Accounts</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Manage Appointment</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/adminPendingAppointment">Pending Appointments</a></li>
+              <li><a href="/adminAcceptedAppointment">Accepted Appointments</a></li>
+              <li><a href="/adminAppointmentHistory">Appoinment History</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Documentation</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/adminCounselorLog">Counselor Logs</a></li>
+              <li><a href="/adminCounselorLog">Statistic Report</a></li>
+              <li><a href="/adminCounselorLog">Summary Of Appointment</a></li>
+            </ul>
+          </li>
+          <li><a class="getstarted scrollto" href="/">Logout</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+<!-- Table -->
+<!-- Add the tab structure -->
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="student-tab" data-bs-toggle="tab" href="#student" role="tab" aria-controls="student" aria-selected="true">Students</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="counselor-tab" data-bs-toggle="tab" href="#counselor" role="tab" aria-controls="counselor" aria-selected="false">Counselors</a>
+  </li>
+</ul>
+<div class="search-container">
+    <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search">
+  </div>
+<div class="tab-content" id="myTabContent">
+  <!-- Students Tab Content -->
+  <div class="tab-pane fade show active" id="student" role="tabpanel" aria-labelledby="student-tab">
+    <table class="table table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Birthdate</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Email</th>
+          <th scope="col">Password</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Actions</th> <!-- New column for delete button -->
+        </tr>
+      </thead>
+      <tbody>
+        <% studData.forEach((item) => { %>
+          <tr data-id="<%= item.idNumber %>">
+            <th scope="row"><%= item.idNumber %></th>
+            <td><%= item.lastName %></td>
+            <td><%= item.firstName %></td>
+            <td><%= item.birthDate %></td>
+            <td><%= item.gender %></td>
+            <td><%= item.email %></td>
+            <td><%= item.password %></td>
+            <td><%= item.phoneNumber %></td>
+            <td>
+              <button class="btn btn-primary" onclick="editRecord('<%= item.idNumber %>', 'Student')">Edit</button>
+              <button class="btn btn-danger" onclick="deleteRecord('<%= item.idNumber %>', 'Student')">Delete</button>   
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+      
+    </table>
+  </div>
+  <!-- Counselors Tab Content -->
+  <div class="tab-pane fade" id="counselor" role="tabpanel" aria-labelledby="counselor-tab">
+    <table class="table table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Birthdate</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Email</th>
+          <th scope="col">Password</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Actions</th> <!-- New column for delete button -->
+        </tr>
+      </thead>
+      <tbody>
+        <% counData.forEach((item2) => { %>
+          <tr>
+            <th scope="row"><%= item2.idNumber %></th>
+            <td><%= item2.lastName %></td>
+            <td><%= item2.firstName %></td>
+            <td><%= item2.birthDate %></td>
+            <td><%= item2.gender %></td>
+            <td><%= item2.email %></td>
+            <td><%= item2.password %></td>
+            <td><%= item2.phoneNumber %></td>
+            <td>
+              <button class="btn btn-primary" onclick="editRecord('<%= item2.idNumber %>', 'Counselor')">Edit</button>
+                <button class="btn btn-danger" onclick="deleteRecord('<%= item2.idNumber %>', 'Counselor')">Delete</button>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- EDIT FORM -->
+<div id="editForm" style="display: none;">
+  <h2 class="text-center mb-4">Edit Record</h2>
+  <form id="updateForm">
+    <input type="hidden" id="hiddenIdNumber" name="editIdNumber">
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="editFirstName" class="form-label">First Name:</label>
+        <input type="text" id="editFirstName" name="firstName" class="form-control form-control-lg" required>
+      </div>
+      <div class="col-md-6">
+        <label for="editLastName" class="form-label">Last Name:</label>
+        <input type="text" id="editLastName" name="lastName" class="form-control form-control-lg" required>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="editBirthDate" class="form-label">Birthdate:</label>
+        <input type="date" id="editBirthDate" name="birthDate" class="form-control form-control-lg" required>
+      </div>
+      <div class="col-md-6">
+        <label for="editGender" class="form-label">Gender:</label>
+        <select id="editGender" name="gender" class="form-select form-select-lg" required>
+          <option value="" selected disabled>Select Gender</option>
+          <option value="Female">Female</option>
+          <option value="Male">Male</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="editEmail" class="form-label">Email:</label>
+      <input type="email" id="editEmail" name="email" class="form-control form-control-lg" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="editPassword" class="form-label">Password:</label>
+      <input type="password" id="editPassword" name="password" class="form-control form-control-lg" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="editPhoneNumber" class="form-label">Phone Number:</label>
+      <input type="text" id="editPhoneNumber" name="phoneNumber" class="form-control form-control-lg" required>
+    </div>
+
+    <!-- Hidden ID Number Field -->
+    <input type="hidden" id="IDnumber" name="IDnumber">
+
+    <!-- Hidden Account Type Field -->
+    <input type="hidden" id="editAccountType" name="accountType">
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary btn-lg">Update</button>
+    </div>
+  </form>
+</div>
+
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Student Wellness Center</h3>
+      <p>Create possibilities with DLSU-D.</p>
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong><span>De La Salle</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/js/home-page.js"></script>
+  <script src="/js/editAccount.js"></script>
+
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1; /* This makes the main content take up the remaining vertical space */
+    }
+
+    /* If needed, adjust the footer styles below */
+    #footer {
+      padding: 30px 0;
+      text-align: center;
+      width: 100%;
+    }
+  </style>
+</body>
+
+</html>

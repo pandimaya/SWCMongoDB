@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>DLSU-D SWC</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/img/dlsud-logo.png" rel="icon">
+  <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/vendor/animate.css/animate.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/vendor/boxicons/css/boxicons.css" rel="stylesheet">
+  <link href="/vendor/glightbox/css/glightbox.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/css/student-homepage-style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-phone-fill phone-icon"></i> Cavite: +63 (46) 481.1900
+        <i class="bi bi-phone-fill phone-icon"></i> Manila: +63 (2) 8779.5180
+      </div>
+      <div class="social-links d-none d-md-block">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="/adminHomepage">DLSU-D Student Wellness Center</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li class="dropdown"><a href="#"><span>Manage Accounts</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/adminViewAccounts">View Accounts</a></li>
+              <li><a href="/adminCreateAccounts">Create Accounts</a></li>
+              <li><a href="/adminEditRoles">Edit Roles</a></li>
+              <li><a href="/adminEditAccounts">Edit Accounts</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Manage Appointment</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/adminPendingAppointment">Pending Appointments</a></li>
+              <li><a href="/adminAcceptedAppointment">Accepted Appointments</a></li>
+              <li><a href="/adminAppointmentHistory">Appoinment History</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Documentation</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/adminCounselorLog">Counselor Logs</a></li>
+              <li><a href="/adminCounselorLog">Statistic Report</a></li>
+              <li><a href="/adminCounselorLog">Summary Of Appointment</a></li>
+            </ul>
+          </li>
+          <li><a class="getstarted scrollto" href="/">Logout</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+    <!-- Create Account -->
+    <section id="create-account" class="create-account-section">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Registration Form</h2>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <form id="insertForm" action="/register" method="post">
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <div class="form-outline">
+                    <input type="text" id="firstName" name="firstName" class="form-control form-control-lg" required />
+                    <label class="form-label" for="firstName">First Name</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-outline">
+                    <input type="text" id="lastName" name="lastName" class="form-control form-control-lg" required />
+                    <label class="form-label" for="lastName">Last Name</label>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <div class="form-outline">
+                    <input type="date" id="birthdayDate" name="birthDate" class="form-control form-control-lg" required />
+                    <label class="form-label" for="birthDate">Birthday</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <h6 class="mb-2 pb-1">Gender:</h6>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="Female" checked />
+                    <label class="form-check-label" for="femaleGender">Female</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="maleGender" value="Male" />
+                    <label class="form-check-label" for="maleGender">Male</label>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <div class="form-outline">
+                    <input type="email" id="email" name="email" class="form-control form-control-lg" required />
+                    <label class="form-label" for="email">Email</label>
+                  </div>
+                </div>
+                <div class="row mb-4">
+                <div class="col-md-6">
+                  <div class="form-outline">
+                    <input type="text" id="IDnumber" name="idNumber" class="form-control form-control-lg" required />
+                    <label class="form-label" for="IDnumber">ID Number</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-outline">
+                    <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control form-control-lg" required value="+63" />
+                    <label class="form-label" for="phoneNumber">Phone</label>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-12">
+                  <select id="accountType" name="accountType" class="select form-control-lg" required>
+                    <option value="1" disabled>Choose option</option>
+                    <option value="Student" selected>Student</option>
+                    <option value="Counselor">Counselor</option>
+                  </select>
+                  <label class="form-label select-label"for="accountType">Choose option</label>
+                </div>
+              </div>
+              <!-- Dropdown for Student -->
+              <div id="departmentDropdown" style="display: none;" class="mb-4">
+                <label for="departmentSelect" class="form-label">Select Department</label>
+              <select id="departmentSelect"  class="form-select form-select-lg" required>
+                <option value="" disabled>Select Department</option>
+                <option value="CSCS">CSCS</option>
+                <option value="CEAT">CEAT</option>
+                <option value="CTHM">CTHM</option>
+                <option value="CLAC">CLAC</option>
+                <option value="COED">COED</option>
+                <option value="CCJE">CCJE</option>
+                <option value="CBAA">CBAA</option>
+              </select>
+            </div>
+            <div class="mt-4 pt-2 text-center">
+              <button type="button" class="btn btn-primary btn-lg" id="createAccountButton">Create Account</button>        
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>You are in Create accounts</h3>
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong><span>De La Salle</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/green-free-one-page-bootstrap-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <script src="/js/adminCreateAccount.js"></script>
+  <script src="/js/home-page.js"></script>
+
+</body>
+
+</html>

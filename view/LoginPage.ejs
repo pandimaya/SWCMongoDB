@@ -1,0 +1,86 @@
+<html>
+
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="/css/login-style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!-- Favicons -->
+  <link href="/img/dlsud-logo.png" rel="icon">
+</head>
+
+<body>
+  <div class="container px-4 py-5 mx-auto">
+    <div class="card card0">
+      <div class="d-flex flex-lg-row flex-column-reverse">
+        <div class="card card1">
+          <div class="row justify-content-center my-auto">
+            <div class="col-md-8 col-10 my-5">
+              <div class="row justify-content-center px-3 mb-3">
+                <div class="logo-container">
+                  <div class="col-md-5">
+                  <img id="logo1" src="/img/dlsud-logo.png" class="img-fluid">
+                  </div>
+                  <div class="col-md-10">
+                    <img id="logo2" src="/img/SWC-Logo.png" class="img-fluid">
+                </div>
+                </div>
+              </div>
+            
+              <h3 class="mb-5 text-center heading">Welcome to SWC</h3>
+
+              <h6 class="msg-info">Please login to your account</h6>
+              <form id="login-form" method="POST" action="/login">
+                <div class="form-group">
+                  <label class="form-control-label text-muted">Username</label>
+                  <input type="text" id="email" name="email" placeholder="Email" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-control-label text-muted">Password</label>
+                  <input type="password" id="psw" name="psw" placeholder="Password" class="form-control">
+                </div>
+
+                <div class="row justify-content-center my-3 px-3">
+                  <button class="btn btn-outline-success" type="submit">Login</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="bottom text-center mb-5">
+            <p class="sm-text mx-auto mb-3">Don't have an account?
+              <a href="/Registerpage" class="btn btn-success">Create new</a>
+            </p>
+          </div>
+        </div>
+        <div class="card card2">
+          <div class="my-auto mx-md-5 px-md-5 right">
+            <h3 class="text-white">Student Wellness Center</h3>
+            <i><small class="text-white">"Empowering potentials, nurturing purpose: Guiding Lasallian students towards
+                holistic growth and resilience."</small></i>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="/js/login-page.js"></script>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

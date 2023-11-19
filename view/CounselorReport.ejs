@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>DLSU-D SWC</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/img/dlsud-logo.png" rel="icon">
+  <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/vendor/animate.css/animate.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/vendor/boxicons/css/boxicons.css" rel="stylesheet">
+  <link href="/vendor/glightbox/css/glightbox.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/css/student-homepage-style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-person"></i>Welcome Counselor <%= counselorData.last_name %> <%= counselorData.first_name %>
+      </div>
+      <!-- <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope-fill"></i><a href="mailto:contact@example.com">info@example.com</a>
+        <i class="bi bi-phone-fill phone-icon"></i> +1 5589 55488 55
+      </div> -->
+      <div class="social-links d-none d-md-block">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <div class="shadow p-3 mb-5 bg-body rounded">
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="/CounselorHomePage">DLSU-D Student Wellness Center</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li class="dropdown"><a href="#"><span>Profile</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/CounselorProfilePage">Account Details</a></li>
+              <li><a href="#">Settings</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Appointments</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/CounselorPendingAppointmentPage">Pending Appointments</a></li>
+              <li><a href="/CounselorAppointmentHistoryPage">Appointment History</a></li>
+              <li><a href="/CounselorAcceptedAppointmentPage">Accepted Appointments</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Documentation</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/CounselorLogs">Logs</a></li>
+              <li><a href="/CounselorReport">Report</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto " href="#portfolio">Messages</a></li>
+          <li><a class="getstarted scrollto" href="/">Logout</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </div>
+  </header><!-- End Header -->
+
+  <main>
+    <div class="container">
+      <h1>Report</h1>
+      <form action="/submit_data" method="POST">
+        <div class="mb-3">
+          <label for="fname" class="form-label">First Name:</label>
+          <input type="text" class="form-control" id="fname" name="fname">
+        </div>
+        <div class="mb-3">
+          <label for="lname" class="form-label">Last Name:</label>
+          <input type="text" class="form-control" id="lname" name="lname">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="text" class="form-control" id="email" name="email" oninput="suggestEmails()">
+      </div>
+      <div id="emailSuggestions"></div>
+        <div class="mb-3">
+          <label for="progcode" class="form-label">Progcode:</label>
+          <input type="text" class="form-control" id="progcode" name="progcode">
+        </div>
+        <div class="mb-3">
+            <label for="schoolYear" class="form-label">School Year:</label>
+            <input type="text" class="form-control" id="schoolYear" name="schoolYear">
+          </div>
+        <div class="mb-3">
+            <label for="department" class="form-label">Department:</label>
+            <input type="text" class="form-control" id="department" name="department">
+          </div>
+        <div class="mb-3">
+          <label for="typeOfService" class="form-label">Type of Service:</label>
+          <input type="text" class="form-control" id="typeOfService" name="typeOfService">
+        </div>
+        <div class="mb-3">
+          <label for="categoryType" class="form-label">Category Type</label>
+          <input type="text" class="form-control" id="categoryType" name="categoryType">
+        </div>
+        <div class="mb-3">
+          <label for="natureOfConcern" class="form-label">Nature of Concern:</label>
+          <input type="text" class="form-control" id="natureOfConcern" name="natureOfConcern">
+        </div>
+        <div class="mb-3">
+          <label for="counselingClient" class="form-label">Counseling Client:</label>
+          <input type="text" class="form-control" id="counselingClient" name="counselingClient">
+        </div>
+        <div class="mb-3">
+          <label for="sessionName" class="form-label">Session Name:</label>
+          <input type="text" class="form-control" id="sessionName" name="sessionName">
+        </div>
+        <div class="mb-3">
+          <label for="note" class="form-label">Note:</label>
+          <textarea class="form-control" id="note" name="note" rows="5"></textarea>
+        </div>
+        <button type="button"  class="btn btn-primary"onclick="insertRecord()">Submit
+        </button>
+      </form>
+    </div>
+  </main>
+  
+  
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Student Wellness Center</h3>
+      <p>Create possibilities with DLSU-D.</p>
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong><span>De La Salle</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/js/home-page.js"></script>
+  <script src="/js/report.js"></script>
+
+
+
+  <style>
+      /* CSS for the suggestion items */
+      .suggestion-item {
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    /* Highlight effect on hover */
+    .suggestion-item:hover {
+        background-color: #f0f0f0; /* Change the background color as per your design */
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1; /* This makes the main content take up the remaining vertical space */
+    }
+
+    /* If needed, adjust the footer styles below */
+    #footer {
+      padding: 30px 0;
+      text-align: center;
+      width: 100%;
+    }
+  </style>
+</body>
+</html>
